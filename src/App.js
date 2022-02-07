@@ -1,31 +1,16 @@
 import "./App.css";
-import React from "react";
+import React, { useState } from "react";
 import ReactDOM from "react-dom";
 import { InputModal } from "./components/ImputText";
 import { NameandLetter } from "./components/NameandLetter";
 //<InputModal data={mockdata} />
 
+
+
 function App() {
-  return (
-    <div className="App">
-      <NameandLetter />
-
-      <button onClick={showmodal(mockdata)}>test modal</button>
-    </div>
-  );
-}
-
-export default App;
-
-function showmodal(datos) {
-  ReactDOM.render(
-    <React.StrictMode>
-      <App />
-      <InputModal data={datos} />
-    </React.StrictMode>,
-    document.getElementById("root")
-  );
-}
+  const[showModal ,setShowModal]=useState(0)
+  console.log( "showModal")
+  console.log( showModal)
 const mockdata2 = {
   title: "dededdddddddddddddddddddddd",
   posicion: [500, 150, "white"],
@@ -37,10 +22,12 @@ const mockdata2 = {
     ["nombre", 10, "tu nombre"],
     ["apellido", 10, "tu apellido"],
   ],
-
+  
+  
   areaTexto: ["About me", 5],
 
   botones: [["enviar"], ["cerrar"], ["ala mierda"]],
+  borrar:function(){ setShowModal(0)},
 };
 const mockdata = {
   title: "titulo",
@@ -54,4 +41,22 @@ const mockdata = {
   areaTexto: ["About me", 5],
 
   botones: [["enviar"], ["cerrar"], ["ala mierda"]],
+  borrar:function(){ setShowModal(0)},
 };
+console.log("app")
+console.log(showModal)
+  return (
+    <div className="App">
+      <NameandLetter />
+    <InputModal data ={showModal}/>
+    
+      <button onClick={()=>setShowModal(0)}>test modal</button>
+      <button onClick={()=>setShowModal(mockdata)}>test modal</button>
+      <button onClick={()=>setShowModal(mockdata2)}>test modal</button>
+    </div>
+  );
+}
+
+export default App;
+
+

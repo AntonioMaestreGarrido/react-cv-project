@@ -5,18 +5,22 @@ import "./InputModal.css"
 
 export function InputModal(props) {
 
+    console.log(props.data)
+    if (props.data === 0) { console.log("antes null"); return null }
+    console.log("post null")
 
     const { title, botones, campos, areaTexto, posicion } = props.data
-let d="red"
+    const { borrar } = props.data
+    console.log("borrar en compoe")
+    console.log(borrar)
 
-    console.log(posicion[2],d)
 
     let formStyle = {
         position: "absolute",
         top: `${posicion[1]}px`,
-        left:`${posicion[0]}px`
-        
-        
+        left: `${posicion[0]}px`
+
+
     }
 
 
@@ -44,14 +48,14 @@ let d="red"
                         <textarea rows={areaTexto[1]} placeholder={areaTexto[1]} ></textarea>
                     </div>
                     <div className="buttonContainer">
-                        {botones.map((ele) => {
-                            return (
-                                <div className="inputContainer">
-                                    <button type="button">{ele[0]}</button>
 
-                                </div>
-                            )
-                        })}
+                        <button type="button">Send</button>
+                        <button type="reset">Clear</button>
+                        <button onClick={borrar} type="button">Close</button>
+
+
+
+
                     </div>
 
                 </div>
