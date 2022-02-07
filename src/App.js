@@ -9,10 +9,9 @@ import { NameandLetter } from "./components/NameandLetter";
 
 function App() {
   const[showModal ,setShowModal]=useState(0)
-  console.log( "showModal")
-  console.log( showModal)
+
 const mockdata2 = {
-  title: "dededdddddddddddddddddddddd",
+  title: "test",
   posicion: [500, 150, "white"],
   campos: [
     ["nombre", 10, "tu nombre"],
@@ -30,11 +29,11 @@ const mockdata2 = {
   borrar:function(){ setShowModal(0)},
 };
 const mockdata = {
-  title: "titulo",
+  title: "test2",
   posicion: [500, 150, "white"],
   campos: [
     ["nombre", 10, "tu nombre"],
-    ["nombre", 10, "tu nombre"],
+    ["nombre2", 10, "tu nombre"],
     ["apellido", 10, "tu apellido"],
   ],
 
@@ -43,8 +42,7 @@ const mockdata = {
   botones: [["enviar"], ["cerrar"], ["ala mierda"]],
   borrar:function(){ setShowModal(0)},
 };
-console.log("app")
-console.log(showModal)
+
   return (
     <div className="App">
       <NameandLetter />
