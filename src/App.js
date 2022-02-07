@@ -1,25 +1,57 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import React from "react";
+import ReactDOM from "react-dom";
+import { InputModal } from "./components/ImputText";
+import { NameandLetter } from "./components/NameandLetter";
+//<InputModal data={mockdata} />
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <NameandLetter />
+
+      <button onClick={showmodal(mockdata)}>test modal</button>
     </div>
   );
 }
 
 export default App;
+
+function showmodal(datos) {
+  ReactDOM.render(
+    <React.StrictMode>
+      <App />
+      <InputModal data={datos} />
+    </React.StrictMode>,
+    document.getElementById("root")
+  );
+}
+const mockdata2 = {
+  title: "dededdddddddddddddddddddddd",
+  posicion: [500, 150, "white"],
+  campos: [
+    ["nombre", 10, "tu nombre"],
+    ["nombre", 10, "tu nombre"],
+    ["apellido", 10, "tu apellido"],
+    ["nombre", 10, "tu nombre"],
+    ["nombre", 10, "tu nombre"],
+    ["apellido", 10, "tu apellido"],
+  ],
+
+  areaTexto: ["About me", 5],
+
+  botones: [["enviar"], ["cerrar"], ["ala mierda"]],
+};
+const mockdata = {
+  title: "titulo",
+  posicion: [500, 150, "white"],
+  campos: [
+    ["nombre", 10, "tu nombre"],
+    ["nombre", 10, "tu nombre"],
+    ["apellido", 10, "tu apellido"],
+  ],
+
+  areaTexto: ["About me", 5],
+
+  botones: [["enviar"], ["cerrar"], ["ala mierda"]],
+};
