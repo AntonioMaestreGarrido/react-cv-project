@@ -3,58 +3,68 @@ import React, { useState } from "react";
 import ReactDOM from "react-dom";
 import { InputModal } from "./components/ImputText";
 import { NameandLetter } from "./components/NameandLetter";
+import { Hoja } from "./components/hoja";
+
 //<InputModal data={mockdata} />
 
-
-
 function App() {
-  const[showModal ,setShowModal]=useState(0)
+  const [showModal, setShowModal] = useState(0);
 
-const mockdata2 = {
-  title: "test",
-  posicion: [500, 150, "white"],
-  campos: [
-    ["nombre", 10, "tu nombre"],
-    ["nombre", 10, "tu nombre"],
-    ["apellido", 10, "tu apellido"],
-    ["nombre", 10, "tu nombre"],
-    ["nombre", 10, "tu nombre"],
-    ["apellido", 10, "tu apellido"],
-  ],
+  const testState = (state) => {
+    console.log("el modal es " + showModal);
+    setShowModal(state);
+    console.log("el modal es " + showModal);
+  };
   
-  
-  areaTexto: ["About me", 5],
+  const mockdata2 = {
+    title: "test",
+    posicion: [500, 150, "white"],
+    campos: [
+      ["nombre", 10, "tu nombre"],
+      ["nombre", 10, "tu nombre"],
+      ["apellido", 10, "tu apellido"],
+      ["nombre", 10, "tu nombre"],
+      ["nombre", 10, "tu nombre"],
+      ["apellido", 10, "tu apellido"],
+    ],
 
-  botones: [["enviar"], ["cerrar"], ["ala mierda"]],
-  borrar:function(){ setShowModal(0)},
-};
-const mockdata = {
-  title: "test2",
-  posicion: [500, 150, "white"],
-  campos: [
-    ["nombre", 10, "tu nombre"],
-    ["nombre2", 10, "tu nombre"],
-    ["apellido", 10, "tu apellido"],
-  ],
+    areaTexto: ["About me", 5],
 
-  areaTexto: ["About me", 5],
+    botones: [["enviar"], ["cerrar"], ["ala mierda"]],
+    borrar: function () {
+      setShowModal(0);
+    },
+  };
+  const mockdata = {
+    title: "test2",
+    posicion: [500, 150, "white"],
+    campos: [
+      ["nombre", 10, "tu nombre"],
+      ["nombre2", 10, "tu nombre"],
+      ["apellido", 10, "tu apellido"],
+    ],
 
-  botones: [["enviar"], ["cerrar"], ["ala mierda"]],
-  borrar:function(){ setShowModal(0)},
-};
+    areaTexto: ["About me", 5],
+
+    botones: [["enviar"], ["cerrar"], ["ala mierda"]],
+    borrar: function () {
+      setShowModal(0);
+    },
+  };
 
   return (
     <div className="App">
       <NameandLetter />
-    <InputModal data ={showModal}/>
-    
-      <button onClick={()=>setShowModal(0)}>test modal</button>
-      <button onClick={()=>setShowModal(mockdata)}>test modal</button>
-      <button onClick={()=>setShowModal(mockdata2)}>test modal</button>
+      <InputModal data={showModal} />
+
+      <div id="containerTest">
+        <button onClick={() => setShowModal(0)}>test modal</button>
+        <button onClick={() => setShowModal(mockdata)}>test modal</button>
+        <button onClick={() => setShowModal(mockdata2)}>test modal</button>
+      </div>
+      
     </div>
   );
 }
 
 export default App;
-
-
