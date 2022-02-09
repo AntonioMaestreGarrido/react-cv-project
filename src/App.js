@@ -16,41 +16,7 @@ function App() {
     console.log("el modal es " + showModal);
   };
   
-  const mockdata2 = {
-    title: "test",
-    posicion: [500, 150, "white"],
-    campos: [
-      ["nombre", 10, "tu nombre"],
-      ["nombre", 10, "tu nombre"],
-      ["apellido", 10, "tu apellido"],
-      ["nombre", 10, "tu nombre"],
-      ["nombre", 10, "tu nombre"],
-      ["apellido", 10, "tu apellido"],
-    ],
 
-    areaTexto: ["About me", 5],
-
-    botones: [["enviar"], ["cerrar"], ["ala mierda"]],
-    borrar: function () {
-      setShowModal(0);
-    },
-  };
-  const mockdata = {
-    title: "test2",
-    posicion: [500, 150, "white"],
-    campos: [
-      ["nombre", 10, "tu nombre"],
-      ["nombre2", 10, "tu nombre"],
-      ["apellido", 10, "tu apellido"],
-    ],
-
-    areaTexto: ["About me", 5],
-
-    botones: [["enviar"], ["cerrar"], ["ala mierda"]],
-    borrar: function () {
-      setShowModal(0);
-    },
-  };
 
   return (
     <div className="App">
@@ -59,8 +25,9 @@ function App() {
 
       <div id="containerTest">
         <button onClick={() => setShowModal(0)}>test modal</button>
-        <button onClick={() => setShowModal(mockdata)}>test modal</button>
-        <button onClick={() => setShowModal(mockdata2)}>test modal</button>
+        <button onClick={() => setShowModal("form1")}>test modal</button>
+        <button onClick={() => setShowModal("form2")}>test modal</button>
+        <button onClick={() => setShowModal("form3")}>test modal</button>
       </div>
       
     </div>

@@ -1,0 +1,132 @@
+{
+    "form1": {
+        "title": "test",
+        "posicion": {
+            "x": 100,
+            "y": 350
+        },
+        "campos": [
+            {
+                "id": "nombre",
+                "place": "nombre"
+            },
+            {
+                "id": "apellido",
+                "place": "apellido"
+            },
+            {
+                "id": "profesion",
+                "place": "profesion"
+            }
+        ],
+        "areaTexto": [
+            {
+                "id": "place",
+                "place":"escribe algo aqui",
+                "ancho": 5
+            }
+        ],
+        "botones": [
+            [
+                "enviar"
+            ],
+            [
+                "cerrar"
+            ],
+            [
+                "ala mierda"
+            ]
+        ]
+    },
+    "form3": {
+        "title": "MODAL3",
+        "posicion": {
+            "x": 100,
+            "y": 50
+        },
+        "campos": [
+            {
+                "id": "nombre",
+                "place": "nombre"
+            },
+            {
+                "id": "apellido",
+                "place": "apellido"
+            },
+            {
+                "id": "profesion",
+                "place": "profesion"
+            },
+            {
+                "id": "ALTURA",
+                "place": "profesion"
+            }
+        ],
+        "areaTexto": [
+            {
+                "id": "place",
+                "place":"escribe algo aqui",
+                "ancho": 8
+            }
+        ],
+        "botones": [
+            [
+                "enviar"
+            ],
+            [
+                "cerrar"
+            ],
+            [
+                "ala mierda"
+            ]
+        ]
+    },
+    "form2": {
+        "title": "test2",
+        "posicion": {
+            "x": 500,
+            "y": 250
+        },
+        "campos": [
+            {
+                "id": "nombre",
+                "place": "nombre"
+            },{
+                "id": "nombre",
+                "place": "nombre"
+            },{
+                "id": "nombre",
+                "place": "nombre"
+            },{
+                "id": "nombre",
+                "place": "nombre"
+            },
+            {
+                "id": "apellido",
+                "place": "apellido"
+            },
+            {
+                "id": "profesion",
+                "place": "profesion"
+            }
+        ],
+        "areaTexto": [
+            {
+                "id": "place",
+                "place":"escribe algo aqui",
+                "ancho": 5
+            }
+        ],
+        "botones": [
+            [
+                "enviar"
+            ],
+            [
+                "cerrar"
+            ],
+            [
+                "ala mierda"
+            ]
+        ]
+    }
+}

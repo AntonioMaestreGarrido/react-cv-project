@@ -1,62 +1,38 @@
 import React, { useState } from "react";
 import "./InputModal.css"
+import formBlueprint from'../data/modals.json'
 
 
 
 export function InputModal(props) {
-
-    const [x, setX] = useState(160)
-    const [y, setY] = useState(160)
-
-
-    let temporalX
-    let temporalY
+    
+   // const [x, setX] = useState(160)
+    ///const [y, setY] = useState(160)
+    
     if (props.data === 0) { return null }
-
-
-    const { title, botones, campos, areaTexto, posicion } = props.data
-    const { borrar } = props.data
-
-    const mueve = (e) => {
-
-
-        setX(x + (e.clientX - temporalX))
-        setY(y + (e.clientY - temporalY))
-
-    }
-    const coge = (e) => {
-
-        temporalX = e.clientX
-        temporalY = e.clientY
-
-    }
-    const suelta = (e) => {
-
-
-        setX(x + (e.clientX - temporalX))
-        setY(y + (e.clientY - temporalY))
-
-    }
+    
+    const dataForForm=formBlueprint[props.data]
+    console.log(dataForForm.areaTexto[0].place)
+    
+    
     let formStyle = {
         position: "absolute",
-        top: `${y}px`,
-        left: `${x}px`
+        top: `${dataForForm.posicion.y}px`,
+        left: `${dataForForm.posicion.x}px`
     }
     return (
         <>
-            <form autoComplete="off" id={title} style={formStyle} onDrag={mueve}
-                onDragStart={coge}
-                onDragEnd={suelta} draggable="true">
-                <div className="modalInputBox" >
-                    <h1>{title}</h1>
+            <form autoComplete="off" id={dataForForm.title} style={formStyle}>
+                               <div className="modalInputBox" >
+                    <h1>{dataForForm.title}</h1>
 
                     <div>
-                        {campos.map((ele) => {
+                        {dataForForm.campos.map((ele) => {
                             return (
                                 <div className="inputContaines">
 
-                                    <label htmlFor={ele[0]} >{ele[0]}</label>
-                                    <input id={ele[0]} name={ele[0]} type="text" placeholder={ele[2]} size={20} />
+                                    <label htmlFor={ele.id} >{ele.id}</label>
+                                    <input id={ele.id}  name={ele.id} type="text" placeholder={ele.place} size={20} />
 
                                 </div>
                             )
@@ -64,16 +40,16 @@ export function InputModal(props) {
                     </div>
 
                     <div className="areaTexto">
-                        <p>{areaTexto[0]}</p>
-                        <textarea name="areaTexto" rows={areaTexto[1]} placeholder={areaTexto[1]} ></textarea>
+                        <p>{dataForForm.areaTexto[0].id}</p>
+                        <textarea name="areaTexto" placeholder={dataForForm.areaTexto[0].place} rows={dataForForm.areaTexto[0].ancho} placeholder={dataForForm.areaTexto[0].place} ></textarea>
                     </div>
                     <div className="buttonContainer">
 
-                        <button onClick={(e, title) => { console.log(props.data.title); test(e, props.data.title) }} type="send">Send</button>
+                        <button onClick={(e, title) => { console.log(dataForForm.title); test(e, dataForForm.title) }} type="send">Send</button>
                         <button type="reset">Clear</button>
-                        <button onClick={borrar} type="button">Close</button>
-                        <button onClick={test}>test</button>
-                        <button type="button" onClick={console.log(x)}>tewst</button>
+                        <button onClick={console.log("borra")} type="button">Close</button>
+                        
+                        
 
 
 
