@@ -1,29 +1,31 @@
 {
-    "form1": {
-        "title": "test",
+    "personalData": {
+        "id":"personalData",
+        "title": "Personal Data",
+        
         "posicion": {
             "x": 100,
             "y": 350
         },
         "campos": [
             {
-                "id": "nombre",
-                "place": "nombre"
+                "id": "Address",
+                "place": "Input your address"
             },
             {
-                "id": "apellido",
-                "place": "apellido"
+                "id": "Phone",
+                "place": "phone"
             },
             {
-                "id": "profesion",
-                "place": "profesion"
+                "id": "Personal web",
+                "place": "http://.."
             }
         ],
         "areaTexto": [
             {
-                "id": "place",
-                "place":"escribe algo aqui",
-                "ancho": 5
+                "id": "",
+                "place":" ",
+                "ancho": ""
             }
         ],
         "botones": [
@@ -52,15 +54,8 @@
             {
                 "id": "apellido",
                 "place": "apellido"
-            },
-            {
-                "id": "profesion",
-                "place": "profesion"
-            },
-            {
-                "id": "ALTURA",
-                "place": "profesion"
             }
+          
         ],
         "areaTexto": [
             {
