@@ -16,17 +16,15 @@
                 "id": "Phone",
                 "place": "phone"
             },
+            {"id":"Mail",
+                "place":"@"},
             {
                 "id": "Personal web",
                 "place": "http://.."
             }
         ],
         "areaTexto": [
-            {
-                "id": "",
-                "place":" ",
-                "ancho": ""
-            }
+           
         ],
         "botones": [
             [
@@ -40,27 +38,25 @@
             ]
         ]
     },
-    "form3": {
-        "title": "MODAL3",
+    "NameAndProfile": {
+        "id":"NameAndProfile",
+        "title": "nameAndProfile",
         "posicion": {
-            "x": 100,
-            "y": 50
+            "x": 790,
+            "y": 400
         },
         "campos": [
             {
-                "id": "nombre",
-                "place": "nombre"
-            },
-            {
-                "id": "apellido",
-                "place": "apellido"
+                "id": "Nombre",
+                "place": "name"
             }
+            
           
         ],
         "areaTexto": [
             {
-                "id": "place",
-                "place":"escribe algo aqui",
+                "id": "Profile",
+                "place":"Tell us something about you..",
                 "ancho": 8
             }
         ],

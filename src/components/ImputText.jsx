@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import {unmountComponentAtNode} from "react-dom";
 import "./InputModal.css"
 import formBlueprint from '../data/modals.json'
 import uniqid from 'uniqid';
@@ -10,9 +11,9 @@ export function InputModal(props) {
     ///const [y, setY] = useState(160)
 
     if (props.data === 0) { return null }
-
+    
     const dataForForm = formBlueprint[props.id]
-    console.log(props)
+    console.log(dataForForm)
 
 
 
@@ -29,35 +30,45 @@ export function InputModal(props) {
 
                     <div>
                         {dataForForm.campos.map((ele) => {
+                            let id=ele.id.replaceAll(' ','')
+                            
                             return (
                                 <div className="inputContaines" key={uniqid()}>
-
                                     <label htmlFor={ele.id} >{ele.id} </label >
-                                    <input id={ele.id} name={ele.id} type="text"
+                                    <input id={id} name={ele.id} type="text"
                                         key={uniqid()} placeholder={ele.place} size={20} />
 
                                 </div>
                             )
                         })}
                     </div>
-
                     <div className="areaTexto">
-                        <p>{dataForForm.areaTexto[0].id}</p>
-                        <textarea name="areaTexto" placeholder={dataForForm.areaTexto[0].place} key={uniqid()}
-                            rows={dataForForm.areaTexto[0].ancho} placeholder={dataForForm.areaTexto[0].place} ></textarea>
+                        {dataForForm.areaTexto.map((ele) => {
+                            return (<>
+                                
+                                <p>{ele.id}</p>
+                                <textarea name={ele.id.replace(/ /g, "")} placeholder={ele.place} key={uniqid()} rows={ele.ancho}  ></textarea>
+
+                            </>)
+                        })
+                        }
                     </div>
+                    
                     <div className="buttonContainer">
 
-                        <button onClick={(e, title) => { test(e, dataForForm.id) }} type="send">Send</button>
-                        <button type="reset">Clear</button>
-                        <button onClick={console.log("borra")} type="button">Close</button>
-                        <button onClick={(e,respuesta) => {
-                            respuesta= test(e, dataForForm.id)
-                            props.sendBack(respuesta) ;
+                        
+                        <button type="submit" onClick={(e, respuesta) => {
+                            respuesta = test(e, dataForForm.id)
+                                close()
+                            props.sendBack(respuesta);
+
 
                         }
-                        } type="button">vuelta </button>
+                        } type="button">Send </button>
+                        <button type="reset">Clear</button>
+                        <button onClick={()=>(close())} type="button">Close</button>
                         
+
 
 
 
@@ -70,10 +81,10 @@ export function InputModal(props) {
         </>
     )
 }
-// get an objet with fom values
+// get an objet with fom values string.replace(/ /g, "")
 function test(e, title) {
     const form = document.querySelector(`#${title}`)
-    console.log(form)
+    console.log(title)
     let formData = '{'
     for (var i = 0; i < form.elements.length; i++) {
         var fieldName = form.elements[i].name;
@@ -86,4 +97,7 @@ function test(e, title) {
     let respuesta = JSON.parse(formData)
     console.log(respuesta)
     return respuesta
+}
+function close(){unmountComponentAtNode(document.getElementById('modalContainer'))
+
 }

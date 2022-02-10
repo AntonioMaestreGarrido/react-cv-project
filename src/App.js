@@ -2,8 +2,9 @@ import "./App.css";
 import React, { useState,useEffect } from "react";
 import ReactDOM from "react-dom";
 import { InputModal } from "./components/ImputText";
-import { NameandLetter } from "./components/NameandLetter";
+import { PersonalData } from "./components/PersonalData";
 import { Hoja } from "./components/hoja";
+import { NameAndProfile } from "./components/NameAndProfile";
 
 //<InputModal data={mockdata} />
 
@@ -25,7 +26,9 @@ function App() {
 
   return (
     <div className="App">
-      <NameandLetter handle={handleModal} />
+      <PersonalData handle={handleModal} />
+      <NameAndProfile handle={handleModal} />
+
       <InputModal data={showModal} />
 
      
