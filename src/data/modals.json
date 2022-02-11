@@ -72,41 +72,32 @@
             ]
         ]
     },
-    "form2": {
-        "title": "test2",
+    "Experience": {
+        "id":"NameAndProfile",
+        "title": "Experience",
         "posicion": {
             "x": 500,
             "y": 250
         },
         "campos": [
             {
-                "id": "nombre",
-                "place": "nombre"
+                "id": "Empresa",
+                "place": "Empresa"
             },{
-                "id": "nombre",
-                "place": "nombre"
+                "id": "Puesto",
+                "place": "Puesto"
             },{
-                "id": "nombre",
-                "place": "nombre"
-            },{
-                "id": "nombre",
-                "place": "nombre"
+                "id": "From",
+                "place": "From"
             },
             {
-                "id": "apellido",
-                "place": "apellido"
-            },
-            {
-                "id": "profesion",
-                "place": "profesion"
+                "id": "until",
+                "place": "until"
             }
+           
         ],
         "areaTexto": [
-            {
-                "id": "place",
-                "place":"escribe algo aqui",
-                "ancho": 5
-            }
+            
         ],
         "botones": [
             [

@@ -103,6 +103,7 @@ function test(e, title) {
     formData = formData.substring(0, formData.length - 1)
     formData += '}'
     let respuesta = JSON.parse(formData)
+    console.log('desde el modal')
     console.log(respuesta)
     return respuesta
 }
