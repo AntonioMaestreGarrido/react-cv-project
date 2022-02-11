@@ -8,20 +8,18 @@ export function PersonalData(props) {
 
     const sendAnswer = (respuestas) => { setAnswer(respuestas) }
     const [answer, setAnswer] = useState()
-    console.log(answer)
-    useEffect(fill, answer)
-    console.log([answer])
+    if(answer){fill()}
 
     function openModal() {
         let sendAnswer = ""
 
 
-        ReactDOM.render(<InputModal id={'personalData'} sendBack={setAnswer} />, document.getElementById('modalContainer'))
+        ReactDOM.render(<InputModal id={'personalData'} sendBack={setAnswer}answer={answer} />, document.getElementById('modalContainer'))
     }
     function fill() {
         if (answer) {
-            
-            console.log(document.querySelector('#personaldata>#Personal web'))
+            console.log("inside fill")
+            console.log(answer)
             document.querySelector('#personaldata>#Address').textContent = answer.Address
             document.querySelector('#personaldata>#Phone').textContent = answer.Phone
             document.querySelector('#personaldata>#Mail').textContent = answer.Mail

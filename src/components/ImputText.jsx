@@ -13,8 +13,8 @@ export function InputModal(props) {
     if (props.data === 0) { return null }
     
     const dataForForm = formBlueprint[props.id]
-    console.log(dataForForm)
-
+    console.log(props)
+    console.log( props.answer)
 
 
     let formStyle = {
@@ -31,12 +31,20 @@ export function InputModal(props) {
                     <div>
                         {dataForForm.campos.map((ele) => {
                             let id=ele.id.replaceAll(' ','')
-                            
+                            let defo=""
+                            if(props.answer)
+                            {console.log(ele.id)
+                            defo=props.answer[ele.id]}
+
+
+
+                            //{if (props.answer[ele.id]!= undefined){defo=ele.id}}
                             return (
                                 <div className="inputContaines" key={uniqid()}>
                                     <label htmlFor={ele.id} >{ele.id} </label >
                                     <input id={id} name={ele.id} type="text"
-                                        key={uniqid()} placeholder={ele.place} size={20} />
+                                        key={uniqid()} placeholder={ele.place} size={20}
+                                        defaultValue={defo} />
 
                                 </div>
                             )
