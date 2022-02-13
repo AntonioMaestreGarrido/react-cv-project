@@ -30,7 +30,7 @@ export function PersonalData(props) {
         ADDRESS
       </p>
       <p key={uniqid()} id="Address">
-        {answer.Addres}
+        {answer.Address}
       </p>
       <p key={uniqid()} className="question">
         PHONE
@@ -48,7 +48,7 @@ export function PersonalData(props) {
         WEB
       </p>
       <p key={uniqid()} id="Personalweb">
-        {answer["Personal Web"]}{" "}
+        {answer["Personal web"]}
       </p>
       <button key={uniqid()} onClick={openModal}>
         testeando
