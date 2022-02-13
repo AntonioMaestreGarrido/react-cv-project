@@ -1,114 +1,106 @@
 {
-    "personalData": {
-        "id":"personalData",
-        "title": "Personal Data",
-        
-        "posicion": {
-            "x": 100,
-            "y": 350
-        },
-        "campos": [
-            {
-                "id": "Address",
-                "place": "Input your address"
-            },
-            {
-                "id": "Phone",
-                "place": "phone"
-            },
-            {"id":"Mail",
-                "place":"@"},
-            {
-                "id": "Personal web",
-                "place": "http://.."
-            }
-        ],
-        "areaTexto": [
-           
-        ],
-        "botones": [
-            [
-                "enviar"
-            ],
-            [
-                "cerrar"
-            ],
-            [
-                "ala mierda"
-            ]
-        ]
+  "personalData": {
+    "id": "personalData",
+    "title": "Personal Data",
+
+    "posicion": {
+      "x": 100,
+      "y": 350
     },
-    "NameAndProfile": {
-        "id":"NameAndProfile",
-        "title": "nameAndProfile",
-        "posicion": {
-            "x": 790,
-            "y": 400
-        },
-        "campos": [
-            {
-                "id": "Nombre",
-                "place": "name"
-            }
-            
-          
-        ],
-        "areaTexto": [
-            {
-                "id": "Profile",
-                "place":"Tell us something about you..",
-                "ancho": 8
-            }
-        ],
-        "botones": [
-            [
-                "enviar"
-            ],
-            [
-                "cerrar"
-            ],
-            [
-                "ala mierda"
-            ]
-        ]
+    "campos": [
+      {
+        "id": "Address",
+        "place": "Input your address"
+      },
+      {
+        "id": "Phone",
+        "place": "phone"
+      },
+      { "id": "Mail", "place": "@" },
+      {
+        "id": "Personal web",
+        "place": "http://.."
+      }
+    ],
+    "areaTexto": [],
+    "botones": [["enviar"], ["cerrar"], ["ala mierda"]]
+  },
+  "NameAndProfile": {
+    "id": "NameAndProfile",
+    "title": "nameAndProfile",
+    "posicion": {
+      "x": 790,
+      "y": 400
     },
-    "Experience": {
-        "id":"NameAndProfile",
-        "title": "Experience",
-        "posicion": {
-            "x": 500,
-            "y": 250
-        },
-        "campos": [
-            {
-                "id": "Empresa",
-                "place": "Empresa"
-            },{
-                "id": "Puesto",
-                "place": "Puesto"
-            },{
-                "id": "From",
-                "place": "From"
-            },
-            {
-                "id": "until",
-                "place": "until"
-            }
-           
-        ],
-        "areaTexto": [
-            
-        ],
-        "botones": [
-            [
-                "enviar"
-            ],
-            [
-                "cerrar"
-            ],
-            [
-                "ala mierda"
-            ]
-        ]
-    }
+    "campos": [
+      {
+        "id": "Nombre",
+        "place": "name"
+      }
+    ],
+    "areaTexto": [
+      {
+        "id": "Profile",
+        "place": "Tell us something about you..",
+        "ancho": 8
+      }
+    ],
+    "botones": [["enviar"], ["cerrar"], ["ala mierda"]]
+  },
+  "Experience": {
+    "id": "NameAndProfile",
+    "title": "Experience",
+    "posicion": {
+      "x": 500,
+      "y": 150
+    },
+    "campos": [
+      {
+        "id": "Empresa",
+        "place": "Empresa"
+      },
+      {
+        "id": "Puesto",
+        "place": "Puesto"
+      },
+      {
+        "id": "From",
+        "place": "From"
+      },
+      {
+        "id": "Until",
+        "place": "Until"
+      }
+    ],
+    "areaTexto": [],
+    "botones": [["enviar"], ["cerrar"], ["ala mierda"]]
+  },
+  "Education": {
+    "id": "Education",
+    "title": "Formation",
+    "posicion": {
+      "x": 500,
+      "y": 150
+    },
+    "campos": [
+      {
+        "id": "School",
+        "place": "School"
+      },
+      {
+        "id": "Course",
+        "place": "Course"
+      },
+      {
+        "id": "From",
+        "place": "From"
+      },
+      {
+        "id": "Until",
+        "place": "Until"
+      }
+    ],
+    "areaTexto": [],
+    "botones": [["enviar"], ["cerrar"], ["ala mierda"]]
+  }
 }

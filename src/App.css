@@ -1,8 +1,14 @@
-.App> div{
+.App > div {
   border: solid black 3px;
 }
-.App{
+.App {
   display: flex;
   flex-direction: row;
 }
+.ExperienceList {
+  width: 40vw;
+  background-color: blueviolet;
 
+  display: flex;
+  border: solid black 5px;
+}

@@ -1,40 +1,32 @@
+import React, { useState } from "react";
 import "./App.css";
-import React, { useState,useEffect } from "react";
-import ReactDOM from "react-dom";
-import { InputModal } from "./components/ImputText";
-import { PersonalData } from "./components/PersonalData";
-import { Hoja } from "./components/hoja";
-import { NameAndProfile } from "./components/NameAndProfile";
+import { ExperienceContainer } from "./components/ExperienceContainer";
+import { ExperienceItem } from "./components/ExperienceItem";
 import { Experience } from "./components/Experience";
+import { InputModal } from "./components/ImputText";
+import { NameAndProfile } from "./components/NameAndProfile";
+import { PersonalData } from "./components/PersonalData";
+import { Education } from "./components/Education";
 
 //<InputModal data={mockdata} />
 
-
-
-
 function App() {
-  
   const [showModal, setShowModal] = useState(0);
-  const handleModal=(modal)=>{setShowModal(modal)}
 
-  const testState = (state) => {
-    console.log("el modal es " + showModal);
-    setShowModal(state);
-    console.log("el modal es " + showModal);
+  const handleModal = (modal) => {
+    setShowModal(modal);
   };
-  
-
 
   return (
     <div className="App">
       <PersonalData handle={handleModal} />
       <NameAndProfile handle={handleModal} />
       <Experience handle={handleModal} />
+      <Education handle={handleModal} />
 
-      <InputModal data={showModal} />
-
-     
-      
+      {/*
+      <ExperienceItem handle={handleModal} />*/}
+      <InputModal data={showModal} modal={handleModal} />
     </div>
   );
 }

@@ -1,54 +1,58 @@
-
-import ReactDOM from 'react-dom';
+import ReactDOM from "react-dom";
 import { InputModal } from "./ImputText";
 import React, { useState, useEffect } from "react";
-
+import { ExperienceContainer } from "./ExperienceContainer";
+import uniqid from "uniqid";
 
 export function Experience(props) {
+  console.log(props);
+  const [answer, setAnswer] = useState([]);
 
-    const sendAnswer = (respuestas) => { setAnswer(respuestas) }
-    const [answer, setAnswer] = useState()
-    if(answer){fill()}
+  function openModal() {
+    ReactDOM.render(
+      <InputModal
+        id={"Experience"}
+        allowArray={true}
+        sendBack={setAnswer}
+        answer={answer}
+      />,
+      document.getElementById("modalContainer")
+    );
+    document.querySelector("form").style.display = "block";
+  }
 
-    function openModal() {
-        let sendAnswer = ""
+  return (
+    <div className="toFill" id="Experience">
+      <h2>Work Experience</h2>
+      <hr></hr>
 
+      {answer.map(function (item) {
+        console.log("itemen");
+        console.log(item);
+        return (
+          <div key={uniqid()} className="ExperienceList">
+            <div>
+              {" "}
+              <p>{item.Empresa}</p>
+              <p>{item.Puesto}</p>
+            </div>
+            <div>
+              <p>{item.From}</p>
+              <p>{item.Until}</p>
+            </div>
+          </div>
+        );
+      })}
 
-        ReactDOM.render(<InputModal id={'Experience'} sendBack={setAnswer}answer={answer} />, document.getElementById('modalContainer'))
-    }
-    function fill() {
-        if (answer) {
-            console.log("inside fill")
-            console.log(answer)
-            document.querySelector('.ExperienceList>.Empresa').textContent = answer.Empresa
-            document.querySelector('.ExperienceList>.Puesto').textContent = answer.Puesto
-            document.querySelector('.ExperienceList>.From').textContent = answer.From
-            document.querySelector('.ExperienceList>.Until').textContent = answer.Until
-        }
+      <button onClick={openModal}>testeando</button>
 
-
-    }
-
-    return (
-
-        <div className='toFill' id="Experience">
-
-           <h2>Work Experience</h2>
-           <hr></hr>
-           < div className='ExperienceList'>
-               <p className='Empresa'>-</p>
-               <p className='Puesto'>-</p>
-               <p className='From'>-</p>
-               <p className='Until'>-</p>
-           </ div>
-            <button onClick={openModal}
-            >testeando</button>
-            <button onClick={() => console.log(answer)}>ver respuetas</button>
-            <button onClick={() => fill()}>rellena</button>
-            <p></p>
-        </div>
-
-    )
+      <button onClick={() => console.log(answer)}>ver respuetas</button>
+      <button
+        onClick={() => setAnswer([...answer, answer[answer.length - 1] + 1])}
+      >
+        rellena
+      </button>
+      <p></p>
+    </div>
+  );
 }
-
-
