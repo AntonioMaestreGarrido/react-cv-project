@@ -4,13 +4,18 @@ import React, { useState, useEffect } from "react";
 import uniqid from "uniqid";
 
 export function PersonalData(props) {
-  const [answer, setAnswer] = useState();
-  console.log("en persona data");
-  console.log(answer);
+  const [answer, setAnswer] = useState({
+    Addres: "",
+    Phone: "",
+    Mail: "",
+    "Personal Web": ""
+  });
+
   function openModal() {
+    console.log("intentado abrir modal ");
     ReactDOM.render(
       <InputModal
-        id={"personalData"}
+        id={"PersonalData"}
         allowArray={false}
         sendBack={setAnswer}
         answer={answer}
@@ -18,33 +23,39 @@ export function PersonalData(props) {
       document.getElementById("modalContainer")
     );
   }
-  function fill() {
-    if (answer) {
-      console.log("inside fill");
-      console.log(answer);
-      document.querySelector("#personaldata>#Address").textContent =
-        answer.Address;
-      document.querySelector("#personaldata>#Phone").textContent = answer.Phone;
-      document.querySelector("#personaldata>#Mail").textContent = answer.Mail;
-      document.querySelector("#personaldata>#Personalweb").textContent =
-        answer["Personal web"];
-    }
-  }
 
   return (
-    <div className="toFill" id="personaldata">
-      <p className="question">ADDRESS</p>
-      <p id="Address"> {} </p>
-      <p className="question">PHONE</p>
-      <p id="Phone"> - </p>
-      <p className="question">EMAIL</p>
-      <p id="Mail">-</p>
-      <p className="question">WEB</p>
-      <p id="Personalweb">-</p>
-      <button onClick={openModal}>testeando</button>
-      <button onClick={() => console.log(answer)}>ver respuetas</button>
-      <button onClick={() => fill()}>rellena</button>
-      <p></p>
+    <div key={uniqid()} className="toFill" id="personaldata">
+      <p key={uniqid()} className="question">
+        ADDRESS
+      </p>
+      <p key={uniqid()} id="Address">
+        {answer.Addres}
+      </p>
+      <p key={uniqid()} className="question">
+        PHONE
+      </p>
+      <p key={uniqid()} id="Phone">
+        {answer.Phone}
+      </p>
+      <p key={uniqid()} className="question">
+        EMAIL
+      </p>
+      <p key={uniqid()} id="Mail">
+        {answer.Mail}
+      </p>
+      <p key={uniqid()} className="question">
+        WEB
+      </p>
+      <p key={uniqid()} id="Personalweb">
+        {answer["Personal Web"]}{" "}
+      </p>
+      <button key={uniqid()} onClick={openModal}>
+        testeando
+      </button>
+      <button key={uniqid()} onClick={() => console.log(answer)}>
+        ver respuetas
+      </button>
     </div>
   );
 }

@@ -1,6 +1,6 @@
 {
-  "personalData": {
-    "id": "personalData",
+  "PersonalData": {
+    "id": "PersonalData",
     "title": "Personal Data",
 
     "posicion": {
@@ -98,6 +98,26 @@
       {
         "id": "Until",
         "place": "Until"
+      }
+    ],
+    "areaTexto": [],
+    "botones": [["enviar"], ["cerrar"], ["ala mierda"]]
+  },
+  "Abilities": {
+    "id": "Skills",
+    "title": "Others Skills",
+    "posicion": {
+      "x": 500,
+      "y": 150
+    },
+    "campos": [
+      {
+        "id": "skill",
+        "place": ""
+      },
+      {
+        "id": "level",
+        "place": ""
       }
     ],
     "areaTexto": [],

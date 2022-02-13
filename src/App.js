@@ -7,6 +7,7 @@ import { InputModal } from "./components/ImputText";
 import { NameAndProfile } from "./components/NameAndProfile";
 import { PersonalData } from "./components/PersonalData";
 import { Education } from "./components/Education";
+import { Abilities } from "./components/Abilities";
 
 //<InputModal data={mockdata} />
 
@@ -23,10 +24,10 @@ function App() {
       <NameAndProfile handle={handleModal} />
       <Experience handle={handleModal} />
       <Education handle={handleModal} />
-
+      <Abilities handle={handleModal} />
       {/*
       <ExperienceItem handle={handleModal} />*/}
-      <InputModal data={showModal} modal={handleModal} />
+      {/*<InputModal data={showModal} modal={handleModal} />*/}
     </div>
   );
 }

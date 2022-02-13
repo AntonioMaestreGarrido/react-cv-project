@@ -8,27 +8,28 @@ export function InputModal(props) {
   // const [x, setX] = useState(160)
   ///const [y, setY] = useState(160)
 
-  if (props.data === 0) {
-    return null;
-  }
-
   const dataForForm = formBlueprint[props.id];
-  //console.log(props);
+  console.log("los dataforms son");
+  console.log(dataForForm);
 
-  let formStyle = {
+  /* let formStyle = {
     position: "absolute",
+    color: "red",
     display: "block",
     top: `${dataForForm.posicion.y}px`,
     left: `${dataForForm.posicion.x}px`
-  };
+  };*/
+  document.querySelector("#modalContainer").style.display = "block";
   return (
     <>
-      <form autoComplete="off" id={dataForForm.id} style={formStyle}>
+      <form className="modalData" autoComplete="off" id={dataForForm.id}>
         <div className="modalInputBox" key={uniqid()}>
           <h1>{dataForForm.title} </h1>
 
           <div>
             {dataForForm.campos.map((ele) => {
+              console.log("elemento");
+              console.log(ele);
               let id = ele.id.replaceAll(" ", "");
               let defo = "";
               if (props.answer) {
@@ -71,43 +72,30 @@ export function InputModal(props) {
 
           <div className="buttonContainer">
             <button
-              type="submit"
-              onClick={(e, respuesta) => {
-                respuesta = test(e, dataForForm.id);
-                close();
-                props.sendBack(respuesta);
-              }}
-              type="button"
-            >
-              Send{" "}
-            </button>
-            <button type="submit">Clear</button>
-            <button id="closeButton" onClick={() => close()} type="button">
-              Close
-            </button>
-            <button
               type="button"
               onClick={(e) => {
                 let answer = props.answer;
 
                 if (props.allowArray) {
-                  alert(props.allowArray);
-                  alert("true");
+                  console.log("array");
                   props.sendBack((answer) => [
                     ...answer,
                     test(e, dataForForm.id)
                   ]);
                 } else {
-                  alert("false");
-                  console.log("al devlviendo singlearray");
+                  console.log("No array");
                   props.sendBack(test(e, dataForForm.id));
-                  console.log(answer);
                 }
-
-                document.querySelector("form").style.display = "none";
+                console.log(`form#${props.id}`);
+                document.querySelector("#modalContainer").style.display =
+                  "none";
               }}
             >
-              vamos a ver
+              Add
+            </button>
+            <button type="reset">Clear</button>
+            <button id="closeButton" onClick={() => close()} type="button">
+              Close
             </button>
           </div>
         </div>
@@ -138,5 +126,5 @@ function test(e, title) {
   return respuesta;
 }
 function close() {
-  unmountComponentAtNode(document.getElementById("modalContainer"));
+  document.querySelector("#modalContainer").style.display = "none";
 }

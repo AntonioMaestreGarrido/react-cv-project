@@ -6,7 +6,7 @@ export function NameAndProfile(props) {
   const sendAnswer = (respuestas) => {
     setAnswer(respuestas);
   };
-  const [answer, setAnswer] = useState();
+  const [answer, setAnswer] = useState(null);
   if (answer) {
     fill();
   }
@@ -16,10 +16,13 @@ export function NameAndProfile(props) {
   console.log([answer]);
 
   function openModal() {
-    let sendAnswer = "";
-
     ReactDOM.render(
-      <InputModal id={"NameAndProfile"} sendBack={setAnswer} answer={answer} />,
+      <InputModal
+        allowArray={false}
+        id={"NameAndProfile"}
+        sendBack={setAnswer}
+        answer={answer}
+      />,
       document.getElementById("modalContainer")
     );
   }

@@ -1,7 +1,7 @@
 import ReactDOM from "react-dom";
 import { InputModal } from "./ImputText";
-import React, { useState, useEffect } from "react";
-import { ExperienceContainer } from "./ExperienceContainer";
+import React, { useState } from "react";
+
 import uniqid from "uniqid";
 
 export function Experience(props) {
