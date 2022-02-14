@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import "./App.css";
-import { ExperienceContainer } from "./components/ExperienceContainer";
-import { ExperienceItem } from "./components/ExperienceItem";
+
 import { Experience } from "./components/Experience";
 import { InputModal } from "./components/ImputText";
 import { NameAndProfile } from "./components/NameAndProfile";
 import { PersonalData } from "./components/PersonalData";
 import { Education } from "./components/Education";
 import { Abilities } from "./components/Abilities";
+import { Picture } from "./components/Picture";
 
 //<InputModal data={mockdata} />
 
@@ -20,11 +20,20 @@ function App() {
 
   return (
     <div className="App">
-      <PersonalData handle={handleModal} />
-      <NameAndProfile handle={handleModal} />
-      <Experience handle={handleModal} />
-      <Education handle={handleModal} />
-      <Abilities handle={handleModal} />
+     <div id ='header'>
+        <Picture />
+        <NameAndProfile handle={handleModal} />
+     </div>
+     <div id="body">
+        <div id="left">
+          <PersonalData handle={handleModal} />
+          <Abilities handle={handleModal} />
+        </div >
+        <div id="right">
+          <Education handle={handleModal} />
+          <Experience handle={handleModal} />
+        </div >
+     </div >
       {/*
       <ExperienceItem handle={handleModal} />*/}
       {/*<InputModal data={showModal} modal={handleModal} />*/}

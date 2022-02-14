@@ -32,8 +32,8 @@ export function Education(props) {
           <div key={uniqid()} className="ExperienceList">
             <div>
               {" "}
-              <p>{item.Empresa}</p>
-              <p>{item.Puesto}</p>
+              <p>{item.School}</p>
+              <p>{item.Course}</p>
             </div>
             <div>
               <p>{item.From}</p>
