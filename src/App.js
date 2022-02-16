@@ -8,10 +8,15 @@ import { PersonalData } from "./components/PersonalData";
 import { Education } from "./components/Education";
 import { Abilities } from "./components/Abilities";
 import { Picture } from "./components/Picture";
+import printHtmlToPDF from "print-html-to-pdf";
+
 
 //<InputModal data={mockdata} />
 
 function App() {
+
+
+  
   const [showModal, setShowModal] = useState(0);
 
   const handleModal = (modal) => {
@@ -34,6 +39,7 @@ function App() {
           <Experience handle={handleModal} />
         </div >
      </div >
+    
       {/*
       <ExperienceItem handle={handleModal} />*/}
       {/*<InputModal data={showModal} modal={handleModal} />*/}

@@ -26,28 +26,29 @@ export function PersonalData(props) {
 
   return (
     <div key={uniqid()} className="toFill" id="personaldata">
+      <h2>Personal Info</h2>
       <p key={uniqid()} className="question">
         ADDRESS
       </p>
-      <p key={uniqid()} id="Address">
+      <p key={uniqid()} className="answer" id="Address">
         {answer.Address}
       </p>
       <p key={uniqid()} className="question">
         PHONE
       </p>
-      <p key={uniqid()} id="Phone">
+      <p key={uniqid()} id="Phone" className="answer">
         {answer.Phone}
       </p>
       <p key={uniqid()} className="question">
         EMAIL
       </p>
-      <p key={uniqid()} id="Mail">
+      <p key={uniqid()} id="Mail" className="answer">
         {answer.Mail}
       </p>
       <p key={uniqid()} className="question">
         WEB
       </p>
-      <p key={uniqid()} id="Personalweb">
+      <p key={uniqid()} id="Personalweb" className="answer">
         {answer["Personal web"]}
       </p>
       <button key={uniqid()} onClick={openModal}>

@@ -72,12 +72,7 @@
         "place": "Until"
       }
     ],
-    "areaTexto": [
-      {
-        "id": "Tasks",
-        "place": "What you do"
-      }
-    ],
+    "areaTexto": [],
     "botones": [["enviar"], ["cerrar"], ["ala mierda"]]
   },
   "Education": {

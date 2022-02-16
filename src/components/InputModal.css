@@ -1,11 +1,15 @@
 .modalInputBox {
   position: absolute;
-
-  background-color: aqua;
+  margin-top: 60px;
+  
   padding: 10px;
   width: fit-content;
+  height: fit-content;
+  text-overflow: ellipsis;
   height: auto;
-  border: solid 4px black;
+  overflow: visible;
+  background-color: black;
+  color: aliceblue;
 }
 .buttonContainer {
   display: flex;

@@ -32,8 +32,8 @@ export function Abilities(props) {
         return (
           <div key={uniqid()} className="SkillsList">
             <div>
-              <p key={uniqid()}>{item.skill}</p>
-              <p key={uniqid()}>{item.level}</p>
+              <p className="skill" key={uniqid()}>{item.skill}</p>
+              <p className="level" key={uniqid()}>{item.level}</p>
             </div>
           </div>
         );

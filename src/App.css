@@ -1,62 +1,127 @@
-
-.App {
- 
+.App * {
+  margin: 0;
+  padding: 0;
 }
-#root{
-  width: 60vw;
+.App{
+  background-image: url('./assets/space.jpg');
+}
+#root {
+  width: 700px;
   background-color: blueviolet;
   margin: 30px auto;
 }
+h1 {
+  color: aliceblue;
+  font-size: 60px;
+  margin-bottom: 5px;
+  margin-top: 20px;
+}
+h2{
+  color: aliceblue;
+  font-size: 30px;
+  border-bottom: solid white 2px;
+}
 .ExperienceList {
   width: 40vw;
-  background-color: rgb(64, 226, 43);
 
+  color: aliceblue;
   display: flex;
-  border: solid black 5px;
+
+  border-top: solid white 5px;
+  gap: 40px;
 }
-#picturecontainer{
-  background-color: aqua;
+#picturecontainer {
   display: block;
-  width: 20%;
+  width: 30%;
   height: 30vh;
 }
-#header{
+#picturecontainer > img {
+  border-radius: 50%;
+  width: 100%;
+  margin: 20px;
+}
+#header {
   border: solid black 3px;
   display: flex;
   flex-direction: row;
-  height: 30vh;
-
+  height: 35vh;
 }
-#NameAndProfile{
-  background-color: blue;
+#NameAndProfile {
   width: 80%;
+  padding: 50px 40px 0;
 }
-#body{
+#Profile {
+  margin: 20px 0;
+  color: beige;
+  font-size: 24px;
+}
+#body {
   display: flex;
 }
-#left{
+#left {
   padding: 20px;
   width: 20%;
-
+  color: aliceblue;
+}
+#modalcontainer{
+  word-wrap: break-word;
 }
 
-#right{
+#right {
   width: 80%;
   padding: 20px;
-
 }
-#personaldata{
+#personaldata {
   display: block;
-  background-color: bisque;
+
   
 }
-#Skills{
-background-color: deepskyblue;
-}
-#Experience{background-color: cadetblue;
+#left *{
+  margin:  10px 0;
 
 }
-#Education{
-  background-color: darkkhaki;
+#right *{
+  margin:  10px 0;
+  max-width: 25vw;
+}
+#personaldata .question {
+  border-bottom: solid white 2px;
+  
+  font-weight: bolder;
+}
+#personaldata .answer {
+  
+}
+#Skills {
+  margin: 2px 2px 0 0;
+}
+#Skills .skill {
+  font-size: 22px;
+}
+#Skills .level {
+  margin-left: 20px;
+}
+#Experience {
+  color: aliceblue;
+}
+
+#Education .educationInfo ,#Experience .experienceinfo{
+  font-size: 22px;
+  width: 25%;
+}
+.deletebutton{
+  color: aliceblue;
+  background-color: black;
+  border-color: black;
+  width: 20px;
+  height: 17px;
+  text-align: center;
+}
+button{
+  display: none;
+}
+#root .visible{
+
+display: block;
 
 }
